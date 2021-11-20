@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block content%}
+<div class="container" >
+    <div class="imgcontainer" id="imgcontainer">
+        <img src="{% static 'img/ticket1.jpg' %}" alt="{% trans 'Valet QR Ticket' %}" style="width: 100%; height: 100%">
+    </div>
+    <div >
+        <div class="card card-info">
+          <div class="card-header">
+            <h3 class="card-title">{% trans 'Welcome to our service' %}</h3>
+          </div>
+          <!-- /.card-header -->
+          <!-- form start -->
+          <form class="form-horizontal">
+            <div class="card-body">
+                <div style="text-align:center;padding:3em 0 0em 0">
+
+                <h1 id="vehicle_status">Your Car is Parked</h1>
+            
+                </div>
+
+
+                <div style="text-align:center">
+                    <h2  >{% trans 'Your ticket is:' %}</h2>
+                </div>
+
+                <select class="form-control" name="card" id="card">
+                    {% for vehicle in parked_vehicles %}
+                    <option value={{vehicle.card}}>{{vehicle.card}}</option>
+                    {% endfor %}
+                </select>
+
+                <h1 style="text-align:center" id="card_number"><strong>
+                    {% for vehicle in parked_vehicles %}
+                    {% if forloop.counter == 1 %}
+                    #{{vehicle.card}}
+                    {% endif %}
+                    {% endfor %}</strong>
+                </h1>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+              <button type="button"  onclick="request_your_car()"class="btn btn-warning" style="background-color:rgb(189,157,96);font-size:30px;color:black">{% trans 'Request your car' %}</button>
+            {% for phone in phone_number %}
+            {% if forloop.counter == 1 %}
+            <button type="button" onclick="need_help()" class="btn btn-warning" style="background-color:rgb(189,157,96);font-size:30px;color:black">{% trans 'Need help? Call Us' %}    {{phone.number}}</button>
+            {% endif %}
+            {% endfor %}
+            </div>
+            <!-- /.card-footer -->
+          </form>
+        </div>
+
+        
+
+        
+        
+
+
+<!--         <div sytle="text-align:center;font-size:25px;color:black">
+        <span >18808808</span></div> -->
+        
+
+    </div>    
+</div>   
+<script type="text/javascript">
+
+
+    bool_request = false;
+
+    var refreshIntervalId;
+
+    $(document).ready(function(){     
+
+        var card = document.getElementById('card');
+
+        card.onchange = (event) => {
+            var card_number=event.target.value;
+
+            document.getElementById('card_number').innerText="#"+card_number;
+
+        }
+
+    });
+
+    function fetchdata(){
+
+        var card = document.getElementById('card_number').innerText
+
+        $.ajax({
+
+          url: '/request_your_car/',
+
+          data: {
+
+            'card': card
+
+          },
+
+          type: 'post',
+
+          success: function(data){
+           // Perform operation on return value
+           if (data.status == "Delayed"){
+
+                document.getElementById('vehicle_status').innerText = "Your Car is delayed";
+           }
+
+           else if(data.status == "Requested"){
+
+                document.getElementById("vehicle_status").innerText = "Your Car is requested";
+           }
+
+           else if(data.status == "On the Way"){
+
+                document.getElementById("vehicle_status").innerText = "Your Car is on the way";
+           }
+
+           else if(data.status == "Arrived"){
+
+                document.getElementById("vehicle_status").innerText = "Your Car is arrived";
+                
+           }
+           
+           else if(data.status == "Need your help"){
+
+                document.getElementById("vehicle_status").innerText = " Need your help! Please Contact Valet Desk.";
+
+                clearInterval(refreshIntervalId);
+
+                bool_request = false;
+
+
+           }
+
+           else if(data.status == "Closed"){
+                document.getElementById("vehicle_status").innerText = "Your Car is ready for Pickup";
+
+                clearInterval(refreshIntervalId);
+
+                bool_request = false;
+
+                // document.getElementById("vehicle_status").innerText = " Your time is worth! Happy to serve you. We thank you for your visit, please note that your ticket number "+ card +" has been closed."
+           }
+
+
+
+          }
+
+        });
+
+    }
+
+    function request_your_car(){
+
+        if (bool_request ==  false){
+
+            bool_request = true;
+
+            refreshIntervalId = setInterval(fetchdata,1000);
+        }
+
+    }
+
+    function need_help(){
+        var card = document.getElementById('card_number').innerText
+
+        $.ajax({
+
+          url: '/request_need_help/',
+
+          data: {
+
+            'card': card
+
+          },
+
+          type: 'post',
+
+          success: function(data){
+
+          }
+        });
+    }
+
+</script> 
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block content%}
+<div class="container" >
+    <div class="imgcontainer" id="imgcontainer">
+        <img src="{% static 'img/ticket1.jpg' %}" alt="{% trans 'Valet QR Ticket' %}" style="width: 100%; height: 100%">
+    </div>
+    <br><br>
+    <div class="container">
+      <div class="card" style="width:100%; background-color:black;border-radius:10px;padding:10px">
+            <i class="card-img-top icon_center fa fa-check-circle-o" style="font-size:100px;color:green;padding:20px;background-color:white"></i>
+            <i class="card-img-top icon_center fas fa-thumbs-up" style="font-size:100px;color:green;padding:20px;background-color:white"></i>
+            <div class="card-body">
+                <p class="card-text" style="font-size:25px;color:white;text-align:center">{% trans 'Data has been registered successfully' %}</p>
+            </div>
+        </div>
+    </div>
+
+</div>     
+
+
+{% endblock %}
+{% block javascript %}
+<script>
+    function VehiclePark() {
+        card = document.getElementById('card').value;
+        
+        $.ajax({
+            url: '/vehicle_park/',
+            type:"POST",
+            data: {
+              'card':card
+            },
+            success: function (data) {
+
+            }
+        });       
+}
+</script>
+{% endblock %}
+

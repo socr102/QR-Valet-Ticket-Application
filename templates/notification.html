@@ -1,0 +1,42 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block content%}
+<div>
+    <img src="{% static 'img/load.png' %}" style="width: 100%;">
+</div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter1">
+  {% trans 'On the way' %}
+</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">
+  {% trans 'Ready' %}
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      
+      <div class="modal-body"style="text-align: center;">
+         <span style="font-size:25px; font-weight:bold;color:rgb(170,140,25)">{% trans 'KOLLABRIA VALET' %}</span><br>
+         <span style="font-size:25px; font-weight:bold;color:black">{% trans 'Your car is on the way' %}</span><br>
+        <button type="button" class="form-control" style="width:40%;margin-left:auto;margin-right:auto;background-color:rgb(190,140,0);color:black" data-dismiss="modal">{% trans 'OK' %}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      
+      <div class="modal-body"style="text-align: center;">
+         <span style="font-size:25px; font-weight:bold;color:rgb(170,140,25)">{% trans 'KOLLABRIA VALET' %}</span><br>
+         <span style="font-size:25px; font-weight:bold;color:black">{% trans 'Your car is Ready' %}</span><br>
+        <button type="button" class="form-control" style="width:40%;margin-left:auto;margin-right:auto;background-color:rgb(190,140,0);color:black" data-dismiss="modal">{% trans 'OK' %}</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

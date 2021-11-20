@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block content%}
+<div class="container" >
+    <div class="imgcontainer" id="imgcontainer">
+          <img src="{% static 'img/ticket1.jpg' %}" alt="{% trans 'Valet QR Ticket' %}" style="width: 100%; height: 100%">
+    </div>
+    <br><br>
+    <div class="container">
+      <div class="card" style="width:100%; background-color:black;border-radius:10px;padding:10px">
+            <i class="card-img-top icon_center far fa-times-circle" style="font-size:100px;color:red;padding:20px;background-color:white"></i>
+            <i class="card-img-top icon_text_center"><span style="font-size:25px;color:black;padding:5px">{% trans 'We apologize for this error.Please try again, or contact customer service' %}</span></i>
+            {% comment %} <br><span>We apologize for this error.<br>Please try again, or contact customer service</span> {% endcomment %}
+            <div class="card-body">
+                <p class="card-text" style="font-size:25px;color:white;text-align:center">{% trans 'Customer Service' %}<br>18191918</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <form action="/customer/" method="post">
+                    <button type = "submit" class="form-control" style="margin-left: auto;margin-right: auto;background-color:rgb(189,157,96);width:80%;font-weight:bold;color:black">{% trans 'Try again' %}</button>
+                </form>
+            </div>
+            <div class="col-6">
+                <button  onclick="Cancel()"class="form-control" style="margin-left: auto;margin-right: auto;background-color:rgb(189,157,96);width:80%;font-weight:bold;color:black">{% trans 'Cancel' %}</button>
+            </div>
+        </div>
+     </div> 
+</div>     
+<script>
+    function Cancel(){
+        alert("Quit?")
+    }
+</script>
+{% endblock %}

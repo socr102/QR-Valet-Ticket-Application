@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{%block vehicle_request %}
+
+<div class="container" >
+    <div class="imgcontainer" id="imgcontainer">
+        <img src="{% static 'img/ticket1.jpg' %}" alt="{% trans 'Valet QR Ticket' %}" style="width: 100%; height: 100%">
+    </div>
+</div> 
+<div id="vehicle_request">   
+    <div class="row vehicle_detail">
+        <div class="col-5 request_list">
+            <span>{% trans 'Vehicle Request Details' %}</span>
+        </div>
+        <div class="col-3">
+        </div>
+        <div class="col-3">
+            <div class="row request_date_time">
+                <div class="col-12">
+                    11/09/2021
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 request_date_time">
+                    03:00:25PM
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class="col-12 "style="overflow-x:auto;">
+            <table class="table table-bordered"  style="text-align:left; width:100%; height">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">{% trans 'TICKET' %}</th>
+                        <th scope="col">{% trans 'REQUEST TIME' %}</th>
+                        <th scope="col">{% trans 'STATUS' %}</th>
+                        <th scope="col">{% trans 'ARRIVED TIME' %}</th>
+                        <th scope="col">{% trans 'TICKET DATE' %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>8594</td>
+                        <td>02:30 AM</td>
+                        <td class="table-success">{% trans 'ARRIVED' %}</td>
+                        <td>02:55 PM</td>
+                        <td>25/08/2021</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">{% trans 'Employee ID' %}</td>
+                        <td colspan="3">Emp13</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">{% trans 'Vehicle plate#' %}</td>
+                        <td colspan="3">444332</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">{% trans 'Vehicle Color' %}</td>
+                        <td colspan="3">Black</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">{% trans 'Vehicle Make' %}</td>
+                        <td colspan="3">BMW</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">{% trans 'Vehicle Model' %}</td>
+                        <td colspan="3">X6</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">{% trans 'Notes' %}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">{% trans 'Damage Description:' %}<br>{% trans 'The right mirror is broken' %}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">{% trans 'QR Code' %}</td>
+                        <td colspan="3"><img src="{% static 'img/qrcode.png' %}"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                        </td>
+                        <td colspan="2">
+                            <button style="text-align:center;width:60%" type="button" class="btn btn-warning">{% trans 'Close' %}</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>     
+</div>            
+{% endblock %}
