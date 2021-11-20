@@ -2,29 +2,34 @@
 
 I assume that you install the python 3.9
 
-1. Go to the project folder that there is  "manage.py" file
+Go to the project folder that there is  "manage.py" file:
 
-2. Make the virtualenv 
+Make the virtualenv:
 
 	python -m venv venv
+	.\venv\Scripts\activate
 
-3. Install the packages needed
+
+
+Install the packages needed
 
 	pip install -r requirements.txt
 
-4. Build the table
+Build the table
 
 	python manage.py migrate
 
-5. Make the superuser
+Make the superuser
 
 	python manage.py createsuperuser
 
-6. Run the server
+Run the server 😅
 
 	python manage.py runserver
 
-- The meaning of the status number
+
+
+The meaning of the status number in the code
 
 
 	1 - Delayed
@@ -35,17 +40,17 @@ I assume that you install the python 3.9
 	6 - Parked
 	7 - Closed
 
-- This shows how to use the multi languages
+This shows how to use the multi languages
 
 	https://stackoverflow.com/questions/47940607/how-to-integrate-multi-languages-support-by-creating-language-files-in-django-2
 
 Reference:
 
-1. First command
+First command
 
 	django-admin.py makemessages -l ar
 
-2. Second command
+Second command
 
 	django-admin.py compilemessages
 
@@ -55,15 +60,15 @@ I installed this project on the windows
 
 so I am going to descirbe how to set up the envirnment on the windows 10
 
-1. Please Install the Host.File.Edior
+Please Install the Host.File.Edior
 
 	https://hostsfileeditor.com/
 
-2. And then please edit like this:
+And then please edit like this:
 
 	https://files.fm/u/z7u27yb5v
 
-3. To test the valet
+To test the valet
 
 	http://valet.local:8000
 
@@ -73,7 +78,7 @@ Free account:
 	password: Butterfly102
 	email: valetmark@gmail.com 
 
-4. To test the supervisor
+To test the supervisor
 
 	http://supervisor.local:8000
 
@@ -83,12 +88,12 @@ Free account:
 	password: Butterfly102
 	email: supervisormark@gmail.com
 
-5. To test the customer:
+To test the customer:
 
 	http://customer.local:8000
 
 
-6. To manage admin:
+To manage admin:
 
 	http://admin.local:8000
 
@@ -99,4 +104,4 @@ Please ping me "normanburtonfree@gmail.com" if any question or need any help fro
 
 I am very interested in Django Project
 
-My dream become an expert with django :)
+My dream become an expert with django :)😆
