@@ -1,5 +1,9 @@
 # Django-Valet-QR-Ticket
 
+First:
+
+	git clone https://github.com/socr102/QR-Valet-Ticket-Application.git
+
 I assume that you install the python 3.9
 
 Go to the project folder that there is  "manage.py" file:
