@@ -6,26 +6,48 @@ Go to the project folder that there is  "manage.py" file:
 
 Make the virtualenv:
 
-	python -m venv venv
-	.\venv\Scripts\activate
+	- Windows
+
+		python -m venv venv
+		.\venv\Scripts\activate
+
+	- Linux
+
+		1. sudo apt-get update && sudo apt-get -y upgrade
+
+		2. sudo apt-get install python3
+
+		3. sudo apt-get install -y python3-pip
+
+		4. pip3 install virtualenv
+
+		5. virtualenv env
+
+		6. . env/bin/activate
 
 
 
 Install the packages needed
 
-	pip install -r requirements.txt
+	- Window
+
+		pip install -r requirements.txt
+
+	- Linux
+
+		pip3 install -r requirements.txt
 
 Build the table
 
-	python manage.py migrate
+	python3 manage.py migrate
 
 Make the superuser
 
-	python manage.py createsuperuser
+	python3 manage.py createsuperuser
 
 Run the server 😅
 
-	python manage.py runserver
+	python3 manage.py runserver
 
 
 
@@ -62,11 +84,24 @@ so I am going to descirbe how to set up the envirnment on the windows 10
 
 Please Install the Host.File.Edior
 
-	https://hostsfileeditor.com/
+	- Windows
 
-And then please edit like this:
+		https://hostsfileeditor.com/
+		And then please edit like this:
+		https://files.fm/u/z7u27yb5v
 
-	https://files.fm/u/z7u27yb5v
+	- Linux
+
+		sudo nano /etc/hosts
+
+		please edit like this:
+		
+		127.0.0.1 valet.local
+		127.0.0.1 supervisor.local
+		127.0.0.1 customer.local
+
+
+
 
 To test the valet
 
