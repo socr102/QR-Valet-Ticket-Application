@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-20 19:21+0900\n"
+"POT-Creation-Date: 2021-12-14 18:47+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,9 +19,9 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: .\templates\customer_service.html:7
-#: .\templates\customer_service_error.html:7 .\templates\login.html:7
+#: .\templates\customer_service_error.html:7 .\templates\login.html:4
 #: .\templates\register_fail.html:7 .\templates\register_success.html:7
-#: .\templates\vehicle.html:6 .\templates\vehicle_request.html:17
+#: .\templates\vehicle.html:6 .\templates\vehicle_request.html:19
 #: .\templates\vehicle_request_detail.html:8
 msgid "Valet QR Ticket"
 msgstr "تذكرة QR"
@@ -30,15 +30,15 @@ msgstr "تذكرة QR"
 msgid "Welcome to our service"
 msgstr "مرحبا بكم في خدمتنا"
 
-#: .\templates\customer_service.html:26
+#: .\templates\customer_service.html:27
 msgid "Your ticket is:"
 msgstr "تذكرتك هي:"
 
-#: .\templates\customer_service.html:45
+#: .\templates\customer_service.html:46
 msgid "Request your car"
 msgstr "اطلب سيارتك"
 
-#: .\templates\customer_service.html:48
+#: .\templates\customer_service.html:49
 msgid "Need help? Call Us"
 msgstr "تحتاج مساعدة؟ اتصل بنا"
 
@@ -60,25 +60,34 @@ msgstr "حاول مجددا"
 msgid "Cancel"
 msgstr "يلغي"
 
-#: .\templates\login.html:17
+#: .\templates\login.html:59
+msgid "Corporate ID"
+msgstr "هوية الشركة"
+
+#: .\templates\login.html:67
+msgid "Corporate Name"
+msgstr "اسم الشركة"
+
+#: .\templates\login.html:75 .\templates\login.html:103
 msgid "Username"
 msgstr "اسم المستخدم"
 
-#: .\templates\login.html:20
+#: .\templates\login.html:83 .\templates\login.html:106
 msgid "Password"
 msgstr "كلمه السر"
 
-#: .\templates\login.html:22
+#: .\templates\login.html:89 .\templates\login.html:108
 msgid "Log on"
 msgstr "تسجيل دخول"
 
-#: .\templates\login.html:24
+#: .\templates\login.html:91 .\templates\login.html:110
 msgid "I forgot my password"
 msgstr "لقد نسيت كلمة المرور"
 
 #: .\templates\main\password\password_reset.html:10
 msgid "You forgot your password? Here you can easily retrieve a new password."
-msgstr "هل نسيت كلمة المرور الخاصة بك؟ هنا يمكنك بسهولة استرداد كلمة المرور الجديدة."
+msgstr ""
+"هل نسيت كلمة المرور الخاصة بك؟ هنا يمكنك بسهولة استرداد كلمة المرور الجديدة."
 
 #: .\templates\main\password\password_reset.html:24
 msgid "Request new password"
@@ -195,7 +204,7 @@ msgstr "حدد لون السيارة"
 msgid "Select Vehicle Make"
 msgstr "حدد نوع السيارة"
 
-#: .\templates\vehicle.html:81 .\templates\vehicle_request.html:373
+#: .\templates\vehicle.html:81 .\templates\vehicle_request.html:375
 #: .\templates\vehicle_request_detail.html:68
 msgid "Vehicle Model"
 msgstr "موديل السيارة"
@@ -208,137 +217,137 @@ msgstr "ملحوظات:"
 msgid "Submit"
 msgstr "يقدم"
 
-#: .\templates\vehicle_request.html:25 .\templates\vehicle_request.html:50
+#: .\templates\vehicle_request.html:27 .\templates\vehicle_request.html:52
 msgid "Vehicles Parked"
 msgstr "السيارات المتوقفة"
 
-#: .\templates\vehicle_request.html:45
+#: .\templates\vehicle_request.html:47
 msgid "Filter by"
 msgstr "مصنف بواسطة"
 
-#: .\templates\vehicle_request.html:51
+#: .\templates\vehicle_request.html:53
 msgid "Vehicles Requested"
 msgstr "المركبات المطلوبة"
 
-#: .\templates\vehicle_request.html:52
+#: .\templates\vehicle_request.html:54
 msgid "Vehicles All"
 msgstr "مركبات الكل"
 
-#: .\templates\vehicle_request.html:66
+#: .\templates\vehicle_request.html:68
 msgid "Delayed"
 msgstr "تأخير"
 
-#: .\templates\vehicle_request.html:75
+#: .\templates\vehicle_request.html:77
 msgid "Arrived"
 msgstr "وصل"
 
-#: .\templates\vehicle_request.html:86 .\templates\vehicle_request.html:114
-#: .\templates\vehicle_request.html:199
+#: .\templates\vehicle_request.html:88 .\templates\vehicle_request.html:116
+#: .\templates\vehicle_request.html:201
 msgid "Ticket#"
 msgstr "تذكرة#"
 
-#: .\templates\vehicle_request.html:87 .\templates\vehicle_request.html:134
-#: .\templates\vehicle_request.html:214
+#: .\templates\vehicle_request.html:89 .\templates\vehicle_request.html:136
+#: .\templates\vehicle_request.html:216
 msgid "Type"
 msgstr "نوع"
 
-#: .\templates\vehicle_request.html:88 .\templates\vehicle_request.html:139
-#: .\templates\vehicle_request.html:219
+#: .\templates\vehicle_request.html:90 .\templates\vehicle_request.html:141
+#: .\templates\vehicle_request.html:221
 msgid "Model"
 msgstr "نموذج"
 
-#: .\templates\vehicle_request.html:89 .\templates\vehicle_request.html:144
-#: .\templates\vehicle_request.html:224
+#: .\templates\vehicle_request.html:91 .\templates\vehicle_request.html:146
+#: .\templates\vehicle_request.html:226
 msgid "Color"
 msgstr "اللون"
 
-#: .\templates\vehicle_request.html:90 .\templates\vehicle_request.html:229
+#: .\templates\vehicle_request.html:92 .\templates\vehicle_request.html:231
 msgid "Time In"
 msgstr "حان الوقت"
 
-#: .\templates\vehicle_request.html:119 .\templates\vehicle_request.html:204
+#: .\templates\vehicle_request.html:121 .\templates\vehicle_request.html:206
 msgid "Status"
 msgstr "حالة"
 
-#: .\templates\vehicle_request.html:124 .\templates\vehicle_request.html:209
+#: .\templates\vehicle_request.html:126 .\templates\vehicle_request.html:211
 msgid "Wait time"
 msgstr "وقت الانتظار"
 
-#: .\templates\vehicle_request.html:129
+#: .\templates\vehicle_request.html:131
 msgid "Action"
 msgstr "عمل"
 
-#: .\templates\vehicle_request.html:319
+#: .\templates\vehicle_request.html:321
 #: .\templates\vehicle_request_detail.html:14
 msgid "Vehicle Request Details"
 msgstr "تفاصيل طلب المركبة"
 
-#: .\templates\vehicle_request.html:341
+#: .\templates\vehicle_request.html:343
 #: .\templates\vehicle_request_detail.html:36
 msgid "TICKET"
 msgstr "تذكرة"
 
-#: .\templates\vehicle_request.html:342
+#: .\templates\vehicle_request.html:344
 #: .\templates\vehicle_request_detail.html:37
 msgid "REQUEST TIME"
 msgstr "طلب الوقت"
 
-#: .\templates\vehicle_request.html:343
+#: .\templates\vehicle_request.html:345
 #: .\templates\vehicle_request_detail.html:38
 msgid "STATUS"
 msgstr "الحالة"
 
-#: .\templates\vehicle_request.html:344
+#: .\templates\vehicle_request.html:346
 #: .\templates\vehicle_request_detail.html:39
 msgid "ARRIVED TIME"
 msgstr "وقت الوصول"
 
-#: .\templates\vehicle_request.html:345
+#: .\templates\vehicle_request.html:347
 #: .\templates\vehicle_request_detail.html:40
 msgid "TICKET DATE"
 msgstr "تاريخ التذكرة"
 
-#: .\templates\vehicle_request.html:357
+#: .\templates\vehicle_request.html:359
 #: .\templates\vehicle_request_detail.html:52
 msgid "Employee ID"
 msgstr "هوية الموظف"
 
-#: .\templates\vehicle_request.html:361
+#: .\templates\vehicle_request.html:363
 #: .\templates\vehicle_request_detail.html:56
 msgid "Vehicle plate#"
 msgstr "رقم لوحة المركبة"
 
-#: .\templates\vehicle_request.html:365
+#: .\templates\vehicle_request.html:367
 #: .\templates\vehicle_request_detail.html:60
 msgid "Vehicle Color"
 msgstr "لون السيارة"
 
-#: .\templates\vehicle_request.html:369
+#: .\templates\vehicle_request.html:371
 #: .\templates\vehicle_request_detail.html:64
 msgid "Vehicle Make"
 msgstr "صناعة المركبات"
 
-#: .\templates\vehicle_request.html:377
+#: .\templates\vehicle_request.html:379
 #: .\templates\vehicle_request_detail.html:72
 msgid "Notes"
 msgstr "ملحوظات"
 
-#: .\templates\vehicle_request.html:380
+#: .\templates\vehicle_request.html:382
 #: .\templates\vehicle_request_detail.html:75
 msgid "Damage Description:"
 msgstr "وصف الضرر"
 
-#: .\templates\vehicle_request.html:380
+#: .\templates\vehicle_request.html:382
 #: .\templates\vehicle_request_detail.html:75
 msgid "The right mirror is broken"
 msgstr "المرآة اليمنى مكسورة"
 
-#: .\templates\vehicle_request.html:383
+#: .\templates\vehicle_request.html:385
 #: .\templates\vehicle_request_detail.html:78
 msgid "QR Code"
 msgstr "رمز الاستجابة السريعة"
 
-#: .\templates\vehicle_request.html:390
+#: .\templates\vehicle_request.html:392
 #: .\templates\vehicle_request_detail.html:85
 msgid "Close"
 msgstr "قريب"

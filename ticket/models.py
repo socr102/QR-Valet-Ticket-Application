@@ -15,8 +15,8 @@ class Usertype(models.Model):
 
 class UserProfile(models.Model): 
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE) 
-    privillege = models.ForeignKey(Usertype, on_delete=models.CASCADE)
+	user = models.OneToOneField(User, on_delete=models.CASCADE) 
+	privillege = models.ForeignKey(Usertype, on_delete=models.CASCADE)
 
 class Customer(TenantAwareModel):
 
@@ -94,3 +94,17 @@ class  VehicleTracker(models.Model):
 
 	def __str__(self):
 		return self.card
+
+class TenantTable(models.Model):
+	tenant_id = models.CharField(max_length = 100)
+	name = models.CharField(max_length = 100)
+	email = models.EmailField()
+	mobile_number = models.CharField(max_length = 100)
+	phone_number = models.CharField(max_length = 100)
+	country = models.CharField(max_length = 100)
+	state = models.CharField(max_length = 100)
+	city = models.CharField(max_length = 100)
+	start_day = models.DateField()
+	end_day = models.DateField()
+	status = models.CharField(max_length = 100)
+	count_timer = models.IntegerField()

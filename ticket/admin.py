@@ -11,4 +11,6 @@ admin.site.register(Status)
 admin.site.register(VehicleTracker)
 admin.site.register(Usertype)
 admin.site.register(UserProfile)
+admin.site.register(TenantTable)
+
 
