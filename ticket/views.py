@@ -21,10 +21,10 @@ from django.utils.encoding import force_bytes
 
 from django.contrib import messages
 
-import qrcode
-import numpy as np
-import qrcode.image.svg
-from io import BytesIO
+# import qrcode
+# import numpy as np
+# import qrcode.image.svg
+# from io import BytesIO
 
 from .models import *
 
@@ -421,20 +421,20 @@ def home(request):
 
 @csrf_exempt
 def customer(request):
-	data = "http://127.0.0.1:8000/login/"
-	# Name of the QR code Image file
-	QRCodefile = "logincode.png"
-	# instantiate QRCode object
-	qrObject = qrcode.QRCode(version=1, box_size=12)
-	# qrObject = qrcode.QRCode(border=10)
-	# add data to the QR code
-	qrObject.add_data(data)
-	# compile the data into a QR code array
-	qrObject.make()
-	image = qrObject.make_image(fill_color="rgb(210, 175, 55)")
-	image.save(QRCodefile)
+	# data = "http://127.0.0.1:8000/login/"
+	# # Name of the QR code Image file
+	# QRCodefile = "logincode.png"
+	# # instantiate QRCode object
+	# qrObject = qrcode.QRCode(version=1, box_size=12)
+	# # qrObject = qrcode.QRCode(border=10)
+	# # add data to the QR code
+	# qrObject.add_data(data)
+	# # compile the data into a QR code array
+	# qrObject.make()
+	# image = qrObject.make_image(fill_color="rgb(210, 175, 55)")
+	# image.save(QRCodefile)
 	
-	# print the image size (version)
-	print("Size of the QR image(Version):")
-	print(np.array(qrObject.get_matrix()).shape)
+	# # print the image size (version)
+	# print("Size of the QR image(Version):")
+	# print(np.array(qrObject.get_matrix()).shape)
 	return render(request,"qrcode_customer.html")
